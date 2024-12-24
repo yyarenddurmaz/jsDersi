@@ -22,23 +22,24 @@
       <h1>1 Videoda Javascript</h1>
     </div>
     <hr />
-    <div class="container"></div>
+    <div class="container">
+      <p id="para1">Paragraf 1</p>
+      <button onmouseover="mouseover()" onmouseout="mouseout()">Tıkla</button>
+    </div>
     <script>
-      if (2 == 3 && "yaren" == "yaren") {
-        console.log("Doğru");
-      } else {
-        console.log("Yanlış");
-      }
+      function mouseover() {
+        var element = document.getElementById("para1");
+        element.style.color = "red";
+        element.style.backgroundColor = "black";
 
-      if (2 == 3 || "yaren" == "yaren") {
-        console.log("Doğru");
-      } else {
-        console.log("Yanlış");
+        element.innerHTML = "Mouse Over";
       }
-      if (!(3<4)) {
-        console.log("Yanlış");
-      } else {
-        console.log("Doğru");
+      function mouseout() {
+        var element = document.getElementById("para1");
+        element.style.color = "green";
+        element.style.backgroundColor = "yellow";
+
+        element.innerHTML = "Mouse Out";
       }
     </script>
   </body>
