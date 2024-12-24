@@ -23,23 +23,26 @@
     </div>
     <hr />
     <div class="container">
-      <p id="para1">Paragraf 1</p>
-      <button onmouseover="mouseover()" onmouseout="mouseout()">Tıkla</button>
+      <form
+        name="form1"
+        action="gonder.php"
+        method="POST"
+        onsubmit="return dogrula()"
+      >
+        <input type="text" name="isim" />
+        <button type="submit">Gönder</button>
+      </form>
     </div>
     <script>
-      function mouseover() {
-        var element = document.getElementById("para1");
-        element.style.color = "red";
-        element.style.backgroundColor = "black";
+      function dogrula() {
+        var form = document.forms["form1"];
+        var deger = form["isim"].value;
 
-        element.innerHTML = "Mouse Over";
-      }
-      function mouseout() {
-        var element = document.getElementById("para1");
-        element.style.color = "green";
-        element.style.backgroundColor = "yellow";
-
-        element.innerHTML = "Mouse Out";
+        if (deger == "") {
+          alert("İsim alanı boş bırakılamaz");
+          return false;
+        }
+        return true;
       }
     </script>
   </body>
